@@ -1,0 +1,31 @@
+{% load static %}
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}MovieZone{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+
+```
+<nav class="navbar">
+    <a href="{% url 'home' %}" class="logo">MovieZone</a>
+    <a href="{% url 'films' %}" class="nav-link">Movies</a>
+</nav>
+
+<main class="container">
+    {% block content %}
+    {% endblock %}
+</main>
+
+<footer>
+    <p>© 2026 MovieZone | My Favorite Movies</p>
+</footer>
+```
+
+</body>
+</html>

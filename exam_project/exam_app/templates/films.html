@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% block title %}Movies | MovieZone{% endblock %}
+
+{% block content %}
+
+<section class="movies-section">
+    <p class="subtitle">MY COLLECTION</p>
+    <h1>My Favorite Movies</h1>
+
+```
+<div class="movies-grid">
+
+    {% for movie in movies %}
+    <div class="movie-card">
+
+        <div class="movie-icon">🎬</div>
+
+        <h2>{{ movie.name }}</h2>
+
+        <p class="rating"> IMDb: {{ movie.imdb }}/10</p>
+
+        {% if movie.imdb > 8 %}
+            <p class="good">Good Movie</p>
+        {% else %}
+            <p class="standard">Standard Movie</p>
+        {% endif %}
+
+    </div>
+    {% endfor %}
+
+</div>
+
+<a href="{% url 'home' %}" class="btn">← Back to Home</a>
+```
+
+</section>
+
+{% endblock %}
